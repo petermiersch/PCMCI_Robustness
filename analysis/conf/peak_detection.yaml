@@ -1,0 +1,11 @@
+defaults:
+  - _self_
+  - io: test # test or production
+  # disabling hydra output
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+
+hydra:
+  output_subdir: null
+  run:
+    dir: .

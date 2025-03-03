@@ -1,0 +1,29 @@
+defaults:
+  - _self_
+  - io: production # test or production for runs with 1000 years of data observed or simulated for data from the observational period (but observed or simulated runoff)
+  # disabling hydra output
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+
+# disabling hydra output
+hydra:
+  output_subdir: null
+  run:
+    dir: .
+
+# parameters for causal discovery
+discovery:
+  pc_alpha: 0.05 # PC algorithm hyperparameter
+  tau_max: 7
+  sample_selection_seed: 42 # to make the sample selection reproducable
+  peak_sample_sizes: [100, 200, 500, 1000, 1500, 2000, 2500, 3000] # set of number of samples used in training, 0 indicates using all possible data with only 1 fold
+  min_folds_per_basin: 5 # minimum number of folds (=runs of the PCMCI) for each sample size
+  max_folds_per_basin: 10 # maximum number of folds (=runs of the PCMCI) for each sample size
+  pcmci_verbosity: 0 # controls the verbosity (how detailed the outputs are) of the pcmci algorithm
+
+# parameters to configure runtime of slurm jobs
+slurm:
+  runtime_ParCorr: 240 # runtime in minutes for a single basin using ParCorr
+  runtime_GPDC: 600 # runtime in minutes for a single basin unsing GPDC (running on GPU)
+  memory_ParCorr: "8G" # memory per core (only single core used) for ParCorr
+  memory_GPDC: "8G" # memory per core (only single core used) for GPDC. This is not the GPUs Vram, but the memory of the compute node. Memory of the GPU has to be spcified by the GPU model.

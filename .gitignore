@@ -1,0 +1,37 @@
+*.egg-info
+data
+results
+.ipynb_checkpoints
+__pycache__/
+*.pyc
+plots
+scripts/outputs/
+lightning_logs/
+.DS_Store
+
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# vs code workspace
+*.code-workspace
+settings.json
+
+
+# plots
+analysis/conference_plots
+*.png
+*.pdf
+
+# data snippets used for testing
+*.csv

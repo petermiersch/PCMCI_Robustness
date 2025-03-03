@@ -1,0 +1,6 @@
+ids: [6123350]
+data: "/data/compoundx/causal_flood/stability_testing/test_data" # input data directory, peak indices will also be store here
+grdc_info: "/data/compoundx/GRDC_runoff/GRDC_Stations.xlsx"
+models: "/data/compoundx/causal_flood/stability_testing/test_models" # place to store the discovered graphs and trained prediction models
+work: "/work/miersch/submitit" # place for submitit scripts and pickled data
+results: "/data/compoundx/causal_flood/stability_testing/test_results" # place for summary tables, plots, ...

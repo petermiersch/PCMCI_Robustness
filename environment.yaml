@@ -1,0 +1,28 @@
+name: cf
+channels:
+  - conda-forge
+dependencies:
+  - python == 3.10
+  - ipykernel
+  - jupyter
+  - matplotlib
+  - networkx
+  - numba
+  - numpy
+  - pandas
+  - pytest
+  - pytest-cov
+  - scikit-learn
+  - seaborn
+  - tqdm
+  - pytorch
+  - gpytorch
+  - lightning
+  - icecream
+  - pip
+  - pip:
+      # - git+https://github.com/jakobrunge/tigramite.git@master
+      - tigramite==5.2.0.0
+      - hydra-core
+      - submitit
+      - hydra-submitit-launcher
